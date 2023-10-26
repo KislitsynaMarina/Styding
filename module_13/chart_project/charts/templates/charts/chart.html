@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>График с Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 80%; margin: 0 auto;">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        // Ваш JavaScript код для создания графика с использованием Chart.js
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Январь", "Февраль", "Март", "Апрель", "Май"],
+                datasets: [{
+                    label: 'Заболеваемость',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
