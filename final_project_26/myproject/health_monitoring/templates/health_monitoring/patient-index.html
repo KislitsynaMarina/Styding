@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h1>
+            Data about patients.
+        </h1>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    AGE
+                </th>
+                <th>
+                    GENDER
+                </th>
+                <th>
+                    HEIGHT
+                </th>
+                <th>
+                    WEIGHT
+                </th>
+                <th>
+                    AP_HI
+                </th>
+                <th>
+                    AP_LO
+                </th>
+                <th>
+                    CHOLESTEROL
+                </th>
+                <th>
+                    GLUC
+                </th>
+                <th>
+                    SMOKE
+                </th>
+                <th>
+                    ALCO
+                </th>
+                <th>
+                    ACTIVE
+                </th>
+                <th>
+                    CARDIO
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if patient %}
+            {% for value in patient %}
+                    <tr>
+                        <td>
+                            {{ value.id }}
+                        </td>
+                        <td>
+                            {{ value.age }}
+                        </td>
+                        <td>
+                            {{ value.gender }}
+                        </td>
+                        <td>
+                            {{ value.height }}
+                        </td>
+                        <td>
+                            {{ value.weight }}
+                        </td>
+                        <td>
+                            {{ value.ap_hi }}
+                        </td>
+                        <td>
+                            {{ value.ap_lo }}
+                        </td>
+                        <td>
+                            {{ value.cholesterol }}
+                        </td>
+                        <td>
+                            {{ value.gluc }}
+                        </td>
+                        <td>
+                            {{ value.smoke }}
+                        </td>
+                        <td>
+                            {{ value.alco }}
+                        </td>
+                        <td>
+                            {{ value.active }}
+                        </td>
+                        <td>
+                            {{ value.cardio }}
+                        </td>
+                    </tr>
+            {% endfor %}
+        {% else %}
+            <p>Not found data for patient.</p>
+        {% endif %}
+        </tbody>
+    </table>
+
+</body>
+</html>
